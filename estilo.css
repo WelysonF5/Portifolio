@@ -1,0 +1,667 @@
+/*
+body {
+    margin: 0;
+
+    font-family: 'Raleway', sans-serif;
+
+
+}
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.cabecalho__menu {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: none;
+}
+
+.profissional_icone {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.custom-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('path-to-icon-image.png') no-repeat center center;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+*/
+/*
+.menu {
+    display: flex;
+    margin-left: 600px;
+    gap: 35px;
+    font-weight:
+}
+*/
+
+/*
+.menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-left: 20px;
+    gap: 35px;
+    font-weight: bold;
+}
+
+.menu div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-family: 'Raleway', sans-serif;
+    color: #464646;
+}
+
+.corpo {
+    flex-grow: 1;
+}
+
+próxima parte o corpo de pagina 31/10/24
+*/
+
+.notificacao, .email-notification {
+    display: none;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+.pagina {
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*Menu (inicio)*/
+/* Estilização para o menu do cabeçalho */
+.cabecalho__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #0073e6; */
+    padding: 20px;
+    color: #fff;
+
+    background: linear-gradient(to right, #0073e6, #99b6d3, #e91143, #27c912); /* Gradiente de cores aleatórias */
+    animation: gradienteMenu 5s ease infinite;
+    background-size: 200% 200%; /* Adiciona o tamanho do fundo para suportar a animação */
+}
+
+@keyframes gradienteMenu {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.profissional_icone {
+    display: flex;
+    align-items: center;
+}
+
+.profissional_icone i {
+    font-size: 36px;
+}
+
+.profissional p {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Estilização para o menu */
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu div {
+    cursor: pointer;
+}
+
+/* Estilização específica para os links do menu */
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+}
+
+.menu a:hover {
+    color: #f4f4f4;
+}
+
+.menu p {
+    margin: 0;
+}
+
+.conteudo {
+    font-family: 'Raleway', sans-serif;
+    color: #464646;
+    flex: 1;
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.texto {
+    max-width: 50%;
+    text-align: left;
+    font-size: 2.0em;
+    margin-left: 20px;
+}
+
+.texto h1, p {
+    gap: 100px;
+}
+/*Menu (fim)*/
+
+/*Clipping mask/ masking*/
+.forma {
+    position: relative;
+    width: 450px; /* Ajusta o tamanho da imagem para 450px */
+    height: 450px; /* Ajusta o tamanho da imagem para 450px */
+    clip-path: path("M 225,225 A 200,200,0,1,1,224,225 M 130,130 A 150,150,0,1,1,129,131 M 320,130 A 60,60,0,1,1,319,131 M 225,370 A 60,60,0,1,1,224,371"); /* Ajusta os círculos para se adequar ao novo tamanho */
+    overflow: hidden;
+}
+
+.forma::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: path("M 225,225 A 200,200,0,1,1,224,225 M 130,130 A 150,150,0,1,1,129,131 M 320,130 A 60,60,0,1,1,319,131 M 225,370 A 60,60,0,1,1,224,371");
+    z-index: 1; /* Posiciona a borda acima da imagem */
+    background: transparent;
+    animation: pulse 4s infinite; /* Adiciona a animação de pulsação */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+    }
+
+    .foto {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        clip-path: path("M 225,225 A 200,200,0,1,1,224,225 M 130,130 A 150,150,0,1,1,129,131 M 320,130 A 60,60,0,1,1,319,131 M 225,370 A 60,60,0,1,1,224,371"); /* Ajusta os círculos para se adequar ao novo tamanho */
+        z-index: 0;
+        top: 0;
+        left: 0;
+        position: absolute;
+
+
+    }
+
+    .corpo {
+        margin:0;
+        margin-bottom: 30px;
+    }
+/*clipping mask (fim)*/
+
+/*Sobre mim (início)*/
+.sobre_mim_texto,
+.formacao_texto {
+        max-width: auto;
+        padding-left: 120px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        height: 100%;
+        font-size: 1.5em;
+        color: #EAF2FD;
+        display: flex;
+        flex-direction: column;
+        /* background: #0073e6; /* Cor de fundo atualizada */
+        /* border: none; /* Adiciona uma borda para a caixa */
+        border-radius: 10px; /* Adiciona cantos arredondados para um estilo mais suave */
+
+        background: linear-gradient(to right, #2114da, #99bed3, #e9a511, #c912aa); /* Gradiente de cores aleatórias */
+        animation: gradienteSobreMim 10s ease infinite;
+        background-size: 200% 200%; /* Adiciona o tamanho do fundo para suportar a animação */
+
+
+}
+
+@keyframes gradienteSobreMim {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.sobre_mim_texto h2,
+.formacao_texto h2 {
+color: #EAF2FD;
+padding-bottom: 40px;
+
+}
+
+.formacao-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; }
+
+.formacao-descricao {
+    flex: 1;
+    margin-right: 0;
+}
+
+
+
+.formacao-descricao p {
+    margin: 0;
+    max-width: 50%;
+}
+
+
+.formacao-imagem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 200px;
+}
+
+.formacao-imagem img {
+    width: auto;
+    height: auto;
+    border-radius: 70%;
+    padding-right: 120px;
+    /* padding-bottom: 100px; */
+
+}
+/*Sobre mim (fim)*/
+
+
+
+/*Skils e Hobbies (início)*/
+.skills-section, .hobbies-section {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    font-size: 1.5em;
+    color: #464646;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAF2FD; /* Fundo branco */
+    border: none;
+    border-radius: 10px;
+}
+
+.skills-section h2, .hobbies-section h2 {
+    color: #464646;
+    margin: 100px; /* Mesma margem que a seção Sobre mim */
+}
+
+.skills-links, .hobbies-links {
+    display: flex;
+    gap: 40px; /* Aumenta a distância entre os elementos */
+    justify-content: space-around; /* Distribuição horizontal */
+    width: 100%; /* Faz com que os ícones ocupem a largura total */
+}
+
+.skill-item, .hobby-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-links i, .hobbies-links i {
+    font-size: 120px; /* Aumenta o tamanho dos ícones */
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.skills-links p, .hobbies-links p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #464646;
+}
+
+.skills-links .fab.fa-html5 {
+    color: #e34f26; /* Cor padrão do HTML5 */
+}
+
+.skills-links .fab.fa-css3-alt {
+    color: #1572b6; /* Cor padrão do CSS3 */
+}
+
+.skills-links .fab.fa-js-square {
+    color: #f7df1e; /* Cor padrão do JavaScript */
+}
+
+.skills-links .fab.fa-react {
+    color: #61dafb; /* Cor padrão do React */
+}
+
+.skills-links .fab.fa-node {
+    color: #68a063; /* Cor padrão do Node.js */
+}
+
+.hobbies-links .fas.fa-gamepad {
+    color: #e34f26; /* Cor da cor do HTML5 para o gamepad */
+}
+
+.hobbies-links .fas.fa-book {
+    color: #1572b6; /* Cor da cor do CSS3 para o livro */
+}
+
+.hobbies-links .fas.fa-utensils {
+    color: #f7df1e; /* Cor da cor do JavaScript para os utensílios */
+}
+
+.skills-links i:hover, .hobbies-links i:hover {
+    /* background-color: #EAF2FD; */
+    background-color: #d7e2ec;
+
+    ; /* Cor azul do menu ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    border-radius: 10%; /* Adiciona um efeito visual de botão */
+    /* padding: 10px; Adiciona espaçamento ao ícone */
+
+
+}
+/*Skils e Hobbies (fim)*/
+
+/*Links sociais (início)*/
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-left: 0;
+
+}
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 40px;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+
+}
+.social-links a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ddd;
+}
+
+
+
+.social-links a[href*="github"] {
+    color: #333; /* Cor padrão do GitHub */
+    background-color: #fff; /* Fundo branco para contraste */
+    /* border: 2px solid #333; /* Borda na cor do GitHub */
+
+}
+
+.social-links a[href*="linkedin"] {
+    color: #0077b5; /* Cor padrão do LinkedIn */
+    background-color: #fff; /* Fundo branco para contraste */
+    /* border: 2px solid #0077b5; Borda na cor do LinkedIn */
+ }
+
+        
+ /*Links sociais (fim)*/
+
+
+
+        /* projetos (início) */
+.projetos_texto {
+    max-width: auto;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.5em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* background: #fff; Cor de fundo atualizada */
+    border: none; /* Adiciona uma borda para a caixa */
+    border-radius: 10px; /* Adiciona cantos arredondados para um estilo mais suave */
+    padding: 10 0 10 0px; /* Adiciona padding superior e à esquerda */
+    background-size: 200% 200%;
+    margin-top: 0;
+
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #ff6a8e, #fe6b8b); /* Gradiente de cores aleatórias */
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Mosaico de cores aleatórias para o fundo dos projetos */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.projetos_texto h2 {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+.projeto_descricao2,
+.projeto_descricao1 {
+    padding-left: 20px; /* Ajuste conforme a seção Sobre mim */
+    margin: 0 0 0 0;
+    flex: 1;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.projeto_container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    margin-bottom: 0;
+    gap: 15px;
+}
+
+/* Centraliza a página carregada dentro do iframe */
+iframe {
+    width: 1200px;
+    height: 100vh;
+    border: none;
+    transform: scale(0.7);
+    transform-origin: top center;
+    border-radius: 15%;
+    /* margin-right: 20px; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* projetos (fim) */
+
+
+/*Contatos (inicio)*/
+.contato {
+    padding: 50px 0;
+    /* background-color: #00aaff; */
+    font-family: 'Raleway', sans-serif;
+
+    background: linear-gradient(to right, #00aaff, #47b5ec, #4b6470, #9a9ea0); /* Gradiente de cores aleatórias */
+    animation: gradienteContato 12s ease infinite;
+    background-size: 200% 200%; /* Adiciona o tamanho do fundo para suportar a animação */
+
+}
+
+@keyframes gradienteContato {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.contato_titulo {
+    justify-content: center;
+    text-align: center;
+    font-size: 59px;
+    padding-bottom: 15px;
+}
+
+.contato_texto {
+    font-size: 2.0em;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.contato_titulo,
+.contato_texto,
+.form-group {
+    font-family: 'Raleway', sans-serif;
+    color: #464646;
+}
+
+.contato .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contato p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.contato .form-group {
+    margin-bottom: 15px;
+}
+
+
+::placeholder { /* Estilização dos placeholders */
+    color: rgba(70, 70, 70, 0.7); /* Cor do placeholder com 70% de opacidade */
+}
+
+
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 2.0em; /* Aumentei o tamanho da fonte */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 2.0em; /* Aumentei o tamanho da fonte */
+    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo branca com 80% de transparência ao focar */
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo branca com 80% de transparência ao focar */
+    outline: none; /* Remove o outline padrão para um visual mais limpo */
+    font-size: 2.0em;
+}
+
+.contato .enviar-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Botão com fundo transparente */
+    border: none;
+    border-radius: 5px;
+    /* color: green;  */
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 2.5em; /* Aqui você pode ajustar o tamanho da fonte */
+    cursor: pointer;
+
+    color: linear-gradient(to right, green, rgb(50, 177, 50)); /* Gradiente de cores aleatórias */
+    animation: gradienteEnviar 12s ease infinite;
+    background-size: 200% 200%; /* Adiciona o tamanho do fundo para suportar a animação */
+
+
+}
+
+@keyframes gradienteEnviar {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+
+.contato .enviar-btn:hover {
+    background-color: green;
+    color: #fff;
+}
+/*contato(fim)*/
+
+/*Informações*/
+
+.outros_informacoes {
+    background-color: #333; /* Fundo escuro para um visual moderno */
+    color: #fff; /* Texto branco para contraste */
+    padding: 20px 0; /* Espaçamento interno para um visual mais espaçado */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Raleway', sans-serif; /* Mantém a consistência da fonte */
+    border-top: 5px solid #00aaff; /* Adiciona uma linha superior colorida para destaque */
+    margin: 0;
+    position: relative; /* Garante que o rodapé fique fixado na parte inferior */
+    margin-bottom: 0; /* Posiciona o rodapé na parte inferior da página */
+    width: 100%; /* Garante que o rodapé cubra toda a largura da página */
+}
+
+.outros_informacoes p {
+    margin: 0; /* Remove a margem padrão */
+    font-size: 2.5em; /* Tamanho da fonte ligeiramente maior */
+}
